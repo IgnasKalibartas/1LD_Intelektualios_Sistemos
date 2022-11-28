@@ -68,7 +68,7 @@ metric_P4=apvalumas_roundness(P4); %roundness
 x1=[hsv_value_A1 hsv_value_A2 hsv_value_A3 hsv_value_P1 hsv_value_P2];  % pirmas pozymis - spalva
 x2=[metric_A1 metric_A2 metric_A3 metric_P1 metric_P2];                 % antras pozymis - forma
 % 1) Sukuriama pozymiu matrica:
-P=[x1;x2];
+P=[x1;x2]
 
 % Norimi gauti atsakymai. 1 - Obuolys; 2 - Kriause.
 T=[1;1;1;-1;-1]; 
@@ -168,7 +168,7 @@ while e ~= 0 % Ciklas kartojimas, kol pasiekama nuline klaida
     b = b + n * e4;
     b = b + n * e5;
 
-    %klasifikuojama su naujais svoriais ir ieskoma klaidu.
+    %klasifikuojama su naujais svoriais
      
     v1 = w1*x1(1)+x2(1)*w2+b;
 
@@ -225,5 +225,15 @@ while e ~= 0 % Ciklas kartojimas, kol pasiekama nuline klaida
     e5 = T(5) - y;
     
     
-	e = abs(e1) + abs(e2) + abs(e3) + abs(e4) + abs(e5)
+% 
+%   Test how good are updated parameters (weights) on all examples used for training
+%   calculate outputs and errors for all 5 examples using current values of the parameter set {w1, w2, b}
+%   calculate 'v1', 'v2', 'v3',... 'v5'
+% 
+%   calculate 'y1', ..., 'y5'
+%     
+%   calculate 'e1', ... 'e5'
+    
+	% calculate the total error for these 5 inputs 
+	e = abs(e1) + abs(e2) + abs(e3) + abs(e4) + abs(e5);
 end
