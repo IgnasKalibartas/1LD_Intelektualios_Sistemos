@@ -225,5 +225,22 @@ while e ~= 0 % Ciklas kartojimas, kol pasiekama nuline klaida
     e5 = T(5) - y;
     
     
-	e = abs(e1) + abs(e2) + abs(e3) + abs(e4) + abs(e5)
+	e = abs(e1) + abs(e2) + abs(e3) + abs(e4) + abs(e5);
 end
+
+Vtest = w1*hsv_value_P4+metric_P4*w2+b; %turi gautis kriause
+
+if Vtest > 0
+    y = 1
+else
+    y = -1
+end
+
+Vtest = w1*hsv_value_A9+metric_A9*w2+b; %turi gautis obuolys
+
+if Vtest > 0
+    y = 1
+else
+    y = -1
+end
+
